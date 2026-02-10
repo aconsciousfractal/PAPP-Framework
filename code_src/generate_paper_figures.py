@@ -76,6 +76,7 @@ def figure_1_ground_state_v18():
     """
     # Load authentic V=18 ground state model
     obj_candidates = [
+        os.path.join(MODELS_DIR, "1111 obj", "1111 obj Quantum Metrics", "Element_V18_phi_gap_5_5_5_5_QUANTUM_METRIC.obj"),
         os.path.join(MODELS_DIR, "1111 obj Quantum Metrics", "Element_V18_phi_gap_5_5_5_5_QUANTUM_METRIC.obj"),
         os.path.join(MODELS_DIR, "ground_state_v18.obj")  # Fallback if file moved
     ]

@@ -16,14 +16,14 @@ from pathlib import Path
 # Configuration
 REPO_ROOT = Path(__file__).parent.parent
 DATA_DIR = REPO_ROOT / "data"
-MODELS_DIR = REPO_ROOT / "assets" / "models_obj" / "1111 obj Quantum Metrics"
+MODELS_DIR = REPO_ROOT / "assets" / "models_obj" / "1111 obj" / "1111 obj Quantum Metrics"
 
 print("="*60)
 print("PAPP Quick Start Example")
 print("="*60)
 
 # Example 1: Load and analyze census data
-print("\n📊 Example 1: Census Data Analysis")
+print("\nExample 1: Census Data Analysis")
 print("-" * 60)
 
 # Load physical census
@@ -44,7 +44,7 @@ for phase, count in phase_counts.items():
     print(f"  {phase}: {count} ({count/len(df_phys)*100:.1f}%)")
 
 # Example 2: Load and visualize a 3D model
-print("\n🎨 Example 2: 3D Model Visualization")
+print("\nExample 2: 3D Model Visualization")
 print("-" * 60)
 
 def load_obj_vertices(filepath):
@@ -76,7 +76,7 @@ plt.savefig("example_v18_visualization.png", dpi=150)
 print("Saved visualization to: example_v18_visualization.png")
 
 # Example 3: Crystallinity distribution
-print("\n📈 Example 3: Crystallinity Distribution")
+print("\nExample 3: Crystallinity Distribution")
 print("-" * 60)
 
 fig, ax = plt.subplots(figsize=(10, 6))
@@ -94,16 +94,28 @@ plt.savefig("example_crystallinity_distribution.png", dpi=150)
 print("Saved distribution to: example_crystallinity_distribution.png")
 
 # Example 4: Family statistics
-print("\n👨‍👩‍👧‍👦 Example 4: Phylogenetic Family Statistics")
+print("\nExample 4: Phylogenetic Family Statistics")
 print("-" * 60)
 
 df_phylo = pd.read_csv(DATA_DIR / "PHYLOGENY_CENSUS.csv")
-family_stats = df_phylo.groupby('Family_ID')['Distance_To_Centroid'].agg(['count', 'mean', 'std'])
+distance_col = None
+for candidate in ("Distance_to_Centroid", "Distance_To_Centroid", "DistanceToCentroid"):
+    if candidate in df_phylo.columns:
+        distance_col = candidate
+        break
+
+if distance_col is None:
+    raise KeyError(
+        "No distance-to-centroid column found in PHYLOGENY_CENSUS.csv. "
+        f"Available columns: {list(df_phylo.columns)}"
+    )
+
+family_stats = df_phylo.groupby('Family_ID')[distance_col].agg(['count', 'mean', 'std'])
 family_stats.columns = ['Members', 'Avg Distance', 'Std Distance']
 print(family_stats.to_string())
 
 print("\n" + "="*60)
-print("✓ Quick start examples completed!")
+print("[OK] Quick start examples completed!")
 print("="*60)
 print("\nGenerated files:")
 print("  - example_v18_visualization.png")

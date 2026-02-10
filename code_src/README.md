@@ -212,38 +212,21 @@ python phylogenetic_tree_generator.py
 ## Figure Generation Scripts
 
 ### `generate_paper_figures.py`
-**Purpose**: Generate main paper figures (Fig1-4)  
-**Output**: `paper_build/figures/Fig1-4.png`  
-**Figures**:
-1. Ground State V=18
-2. Saturation Curve
-3. Pantheon Spectrum
-4. Crystallinity Evolution
+**Purpose**: Generate paper figures  
+**Output**: `paper_build/figures/`  
+**Figures (currently included in repo)**:
+- Fig1_GroundState_V18.png
+- Fig2_Saturation_Curve.png
+- Fig3_Pantheon_Spectrum.png
+- Fig4_Spectral_Phases.png
+- Fig5_V_Distribution.png
+- Fig6_Component_Structure.png
+- component_count_validation.png
+- optimal_phase_boundaries.png
 
 **Usage**:
 ```powershell
 python generate_paper_figures.py
-```
-
----
-
-### `generate_census_figures.py`
-**Purpose**: Generate census analysis figures (Fig5-13)  
-**Output**: `paper_build/figures/Fig5-13.png`  
-**Figures**:
-5. Family Evolution
-6. Centroid Distance Heatmap
-7. Phase Diagram
-8. Sphericity-Volume
-9. Density Distribution
-10. Zero Modes Evolution
-11. Fundamental Frequency Decay
-12. Eigenvalue Spectrum
-13. Summary Dashboard
-
-**Usage**:
-```powershell
-python generate_census_figures.py
 ```
 
 ---
@@ -273,7 +256,6 @@ python phylogenetic_tree_generator.py
 
 # Step 6: Generate all figures (~5 min)
 python generate_paper_figures.py
-python generate_census_figures.py
 ```
 
 **Total Time**: ~4 hours
@@ -325,8 +307,13 @@ PAPP Repository/
 └── paper_build/
     └── figures/
         ├── Fig1_GroundState_V18.png
-        ├── ...
-        └── Fig13_Summary_Dashboard.png                 [13 figures]
+    ├── Fig2_Saturation_Curve.png
+    ├── Fig3_Pantheon_Spectrum.png
+    ├── Fig4_Spectral_Phases.png
+    ├── Fig5_V_Distribution.png
+    ├── Fig6_Component_Structure.png
+    ├── component_count_validation.png
+    └── optimal_phase_boundaries.png
 ```
 
 ---
@@ -346,7 +333,7 @@ Get-ChildItem "assets/models_obj/Post_n100_332 New_Species/*.obj" | Measure-Obje
 (Get-Content "data/SPECTRAL_CENSUS.csv" | Measure-Object -Line).Lines - 1 # Should be 1111
 
 # Check figures
-Get-ChildItem "paper_build/figures/*.png" | Measure-Object # Should be 13
+Get-ChildItem "paper_build/figures/*.png" | Measure-Object # Should be 8
 ```
 
 ---

@@ -17,7 +17,7 @@ cd code_src
 python generate_paper_figures.py
 ```
 
-View output in `paper_build/figures/Fig1-4.png`
+View output in `paper_build/figures/`
 
 ## 📊 Explore Census Data (1 minute)
 

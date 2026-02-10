@@ -6,7 +6,6 @@ authors:
     orcid: "https://orcid.org/0009-0001-6176-6208"
 title: "Polytopic Archetypal Projection Protocol (PAPP)"
 version: 1.0.0
-doi: 10.5281/zenodo.xxxxxx  # Replace with actual DOI after Zenodo upload
 date-released: 2026-02-06
 url: "https://github.com/aconsciousfractal/PAPP-Framework"
 repository-code: "https://github.com/aconsciousfractal/PAPP-Framework"

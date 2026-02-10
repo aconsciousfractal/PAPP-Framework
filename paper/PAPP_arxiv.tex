@@ -1064,16 +1064,15 @@ All connections to physics are \textbf{heuristic parallels}, not proven physical
 \begin{enumerate}[leftmargin=*]
 \item \textbf{Deterministic pipeline}: No randomness (fixed parameters)
 \item \textbf{Open-source code}: Complete implementation in Appendix A. Public repository: \url{https://github.com/aconsciousfractal/PAPP-Framework}
-\item \textbf{Public dataset}: 600 MB topology database (Zenodo DOI upon publication)
+\item \textbf{Public dataset}: 600 MB topology database (public DOI upon publication)
 \item \textbf{Hardware requirements}: Standard laptop (Intel i7, 16GB RAM)
 \item \textbf{Expected runtime}: $\sim$8 hours for $N \leq 35$ subset (52,360 seeds)
 \end{enumerate}
 
 \textbf{Independent Verification Protocol}:
 \begin{lstlisting}[language=bash, basicstyle=\ttfamily\small, frame=single]
-pip install numpy scipy matplotlib
-python papp_pipeline.py --max_sum 35 --output results.pkl
-python verify_claims.py --input results.pkl
+pip install -r requirements.txt
+python reproduce_paper.py
 \end{lstlisting}
 
 % ============ SECTION 9: FUTURE DIRECTIONS ============

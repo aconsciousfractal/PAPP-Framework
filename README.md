@@ -34,17 +34,11 @@ pip install -r requirements.txt
 ```bash
 cd code_src
 
-# Generate main paper figures (Fig1-4)
+# Generate paper figures
 python generate_paper_figures.py
-
-# Generate census analysis figures (Fig5-13)
-python generate_census_figures.py
-
-# View output
-cd ../paper_build/figures
 ```
 
-All 13 publication-ready figures will be in `paper_build/figures/`.
+Figures will be in `paper_build/figures/`.
 
 ---
 
@@ -80,12 +74,15 @@ All 13 publication-ready figures will be in `paper_build/figures/`.
 ```
 PAPP-Framework/
 ├── README.md                    # This file
+├── CODE_OF_CONDUCT.md           # Community standards
 ├── LICENSE                      # GNU GPL v3 (code) + CC BY 4.0 (data/paper)
 ├── requirements.txt             # Python dependencies
 ├── CITATION.cff                 # Citation metadata
 │
 ├── paper/                       # Paper manuscript
-│   └── PAPP_Polytopic_Archetypal_Projection_Protocol.md
+│   ├── PAPP_arxiv.tex
+│   ├── PAPP_arxiv.pdf
+│   └── references.bib
 │
 ├── code_src/                    # All source code
 │   ├── README.md                # Code documentation
@@ -103,8 +100,7 @@ PAPP-Framework/
 │   ├── phylogenetic_tree_generator.py        # Family classification
 │   │
 │   ├── Figure Generation:
-│   ├── generate_paper_figures.py             # Fig1-4
-│   ├── generate_census_figures.py            # Fig5-13
+│   ├── generate_paper_figures.py             # Figures
 │   │
 │   └── Pipeline (PAPP Protocol):
 │       ├── ghost_gen.py                      # Phase 1
@@ -140,10 +136,15 @@ PAPP-Framework/
 │   └── SATURATION_DATA.csv      # Saturation curve data
 │
 ├── paper_build/                 # Generated outputs
-│   └── figures/                 # 13 publication figures (PNG 300 DPI)
+│   └── figures/                 # Figures used by the paper (PNG)
 │       ├── Fig1_GroundState_V18.png
-│       ├── ...
-│       └── Fig13_Summary_Dashboard.png
+│       ├── Fig2_Saturation_Curve.png
+│       ├── Fig3_Pantheon_Spectrum.png
+│       ├── Fig4_Spectral_Phases.png
+│       ├── Fig5_V_Distribution.png
+│       ├── Fig6_Component_Structure.png
+│       ├── component_count_validation.png
+│       └── optimal_phase_boundaries.png
 │
 ├── docs/                        # Additional documentation
 │   ├── INSTALLATION.md          # Detailed installation guide
@@ -151,7 +152,7 @@ PAPP-Framework/
 │   └── API.md                   # Code API reference
 │
 └── examples/                    # Usage examples
-    ├── quickstart.ipynb         # Jupyter notebook tutorial
+  ├── quickstart.py            # Quick start script
     
 ```
 
@@ -186,7 +187,6 @@ python phylogenetic_tree_generator.py
 
 # Step 6: Generate all figures (~5 min)
 python generate_paper_figures.py
-python generate_census_figures.py
 ```
 
 ### Quick Examples
@@ -200,7 +200,7 @@ import matplotlib.pyplot as plt
 
 # Load V=18 ground state
 vertices = []
-with open("assets/models_obj/1111 obj/Element_V18_phi_gap_5_5_5_5_QUANTUM_METRIC.obj") as f:
+with open("assets/models_obj/1111 obj/1111 obj Quantum Metrics/Element_V18_phi_gap_5_5_5_5_QUANTUM_METRIC.obj") as f:
     for line in f:
         if line.startswith('v '):
             vertices.append([float(x) for x in line.split()[1:4]])
@@ -355,7 +355,6 @@ This project is licensed under the **GNU General Public License v3.0** - see the
 
 - **arXiv**: https://arxiv.org/abs/2602.xxxxx (coming soon)
 - **GitHub**: https://github.com/aconsciousfractal/PAPP-Framework
-- **Zenodo (Data)**: https://doi.org/10.5281/zenodo.xxxxxx (coming soon)
 - **Author ORCID**: https://orcid.org/0009-0001-6176-6208
 
 ---
@@ -382,7 +381,7 @@ For questions, issues, or collaboration inquiries, please open a GitHub issue or
 ## 📈 Project Status
 
 - ✅ Complete 1111-configuration survey
-- ✅ All figures generated (13 total)
+- ✅ Figures available (see `paper_build/figures/`)
 - ✅ Census data published
 - ✅ Code fully reproducible
 - ⏳ arXiv submission (in progress)
@@ -391,7 +390,7 @@ For questions, issues, or collaboration inquiries, please open a GitHub issue or
 
 ---
 
-**Last Updated**: 2026-02-06  
+**Last Updated**: 2026-02-10  
 **Version**: 1.0 (Preprint v2.0)
 
 ---

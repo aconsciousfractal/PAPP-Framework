@@ -184,27 +184,22 @@ print('✓ All census files verified!')
 python generate_paper_figures.py
 ```
 
-**Output**: `paper_build/figures/Fig1-4.png`
+**Output directory**: `paper_build/figures/`
+
+This repository currently includes the following figure files:
 - Fig1_GroundState_V18.png
 - Fig2_Saturation_Curve.png
 - Fig3_Pantheon_Spectrum.png
-- Fig4_Crystallinity_Evolution.png
-
----
-
-### Step 3.2: Census Analysis Figures (2 minutes)
-
-```bash
-python generate_census_figures.py
-```
-
-**Output**: `paper_build/figures/Fig5-13.png`
-- Fig5 through Fig13 (9 figures)
+- Fig4_Spectral_Phases.png
+- Fig5_V_Distribution.png
+- Fig6_Component_Structure.png
+- component_count_validation.png
+- optimal_phase_boundaries.png
 
 **Verification (All Figures)**:
 ```bash
 ls -1 ../paper_build/figures/*.png | wc -l
-# Expected: 13
+# Expected: 8
 ```
 
 ---
@@ -282,8 +277,7 @@ PAPP REPRODUCTION VERIFICATION
 | 2 | Physical Census | 15 min | PHYSICAL_CENSUS.csv |
 | 2 | Spectral Census | 10 min | SPECTRAL_CENSUS.csv |
 | 2 | Phylogenetic | 5 min | PHYLOGENY_CENSUS.csv |
-| 3 | Paper Figures | 3 min | Fig1-4.png |
-| 3 | Census Figures | 2 min | Fig5-13.png |
+| 3 | Paper Figures | 3 min | paper_build/figures/*.png |
 | **TOTAL** | | **4 hours** | **1,451 OBJ + 3 CSV + 13 PNG** |
 
 ---
@@ -317,14 +311,7 @@ python batch_generate_pantheon_metrics.py --force
 
 ## Optional: Compare with Published Data
 
-Download official dataset from Zenodo:
-```bash
-wget https://zenodo.org/record/xxxxxx/files/PAPP_official_data.zip
-unzip PAPP_official_data.zip
-
-# Compare CSVs
-diff -q data/PHYSICAL_CENSUS.csv PAPP_official_data/PHYSICAL_CENSUS.csv
-```
+(Removed) This repository currently does not provide a Zenodo mirror.
 
 ---
 
