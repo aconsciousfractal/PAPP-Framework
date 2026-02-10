@@ -1,0 +1,156 @@
+# PAPP Irregular Polychoron - 4D Reconstruction
+# Element: Element_V7
+# Seed: [1, 4, 4, 4]
+#
+# 4D COMBINATORICS:
+#   Vertices (V): 10
+#   Edges    (E): 37
+#   Faces    (F): 54
+#   Cells    (C): 27
+#
+# EULER CHARACTERISTIC: Chi_4 = V - E + F - C = 0
+# STATUS: VALID
+#
+# Projection: Hopf fibration S^3 -> S^2
+# Coordinates: 3D stereographic projection of 4D boundary
+#
+######################################################################
+
+# Vertices (11 projected from 4D)
+v 0.980198 0.198020 0.000000
+v 1.942029 0.115942 0.463768
+v 2.937961 -0.062039 0.603770
+v 3.806235 -0.193765 1.214507
+v -3.692308 1.538462 0.000000
+v -5.000000 0.000000 0.000000
+v -5.600000 -4.200000 -0.000000
+v -8.000000 -0.000000 0.000000
+v -8.000000 0.000000 0.000000
+v -14.870588 4.756320 3.499004
+v -14.870588 -4.756320 3.499004
+
+# Edges (37)
+l 4 5
+l 5 10
+l 5 7
+l 1 3
+l 9 10
+l 1 6
+l 2 7
+l 1 9
+l 3 6
+l 2 4
+l 2 10
+l 3 9
+l 7 9
+l 5 6
+l 4 10
+l 6 7
+l 5 9
+l 4 7
+l 6 10
+l 1 2
+l 1 8
+l 3 5
+l 2 3
+l 1 5
+l 2 9
+l 8 10
+l 7 8
+l 5 8
+l 4 6
+l 4 9
+l 6 9
+l 1 10
+l 2 5
+l 3 4
+l 3 10
+l 7 10
+l 8 9
+
+# Faces - Triangular (54)
+f 7 8 10
+f 1 5 9
+f 3 9 10
+f 4 6 7
+f 6 7 9
+f 4 6 10
+f 1 2 10
+f 5 6 10
+f 5 6 7
+f 5 8 10
+f 2 4 7
+f 2 3 9
+f 5 7 8
+f 2 5 9
+f 3 5 6
+f 3 4 10
+f 1 3 5
+f 1 5 8
+f 1 6 10
+f 7 8 9
+f 7 9 10
+f 4 6 9
+f 1 8 10
+f 2 7 9
+f 1 2 3
+f 1 2 9
+f 8 9 10
+f 3 6 10
+f 2 3 5
+f 2 4 9
+f 5 7 10
+f 5 8 9
+f 4 5 7
+f 3 4 6
+f 3 4 9
+f 4 9 10
+f 1 3 10
+f 1 8 9
+f 1 5 10
+f 6 9 10
+f 6 7 10
+f 1 2 5
+f 2 3 4
+f 2 3 10
+f 2 5 7
+f 5 7 9
+f 2 4 5
+f 4 5 6
+f 3 4 5
+f 4 7 9
+f 1 3 6
+f 1 9 10
+f 2 9 10
+f 1 5 6
+
+# Cells - Tetrahedral (27)
+# Note: OBJ format does not support 4D cells natively
+# Cell data preserved in comments for reference
+# c 4 6 9 10  # Cell 1
+# c 4 6 7 9  # Cell 2
+# c 6 7 9 10  # Cell 3
+# c 1 3 6 10  # Cell 4
+# c 3 4 6 10  # Cell 5
+# c 3 4 9 10  # Cell 6
+# c 2 4 7 9  # Cell 7
+# c 2 3 4 9  # Cell 8
+# c 1 2 9 10  # Cell 9
+# c 1 2 3 10  # Cell 10
+# c 2 3 9 10  # Cell 11
+# c 1 8 9 10  # Cell 12
+# c 7 8 9 10  # Cell 13
+# c 1 2 5 9  # Cell 14
+# c 2 5 7 9  # Cell 15
+# c 1 5 8 9  # Cell 16
+# c 5 7 8 9  # Cell 17
+# c 1 5 8 10  # Cell 18
+# c 5 7 8 10  # Cell 19
+# c 3 4 5 6  # Cell 20
+# c 4 5 6 7  # Cell 21
+# c 1 2 3 5  # Cell 22
+# c 1 3 5 6  # Cell 23
+# c 2 4 5 7  # Cell 24
+# c 2 3 4 5  # Cell 25
+# c 1 5 6 10  # Cell 26
+# c 5 6 7 10  # Cell 27
